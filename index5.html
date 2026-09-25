@@ -1,0 +1,1397 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Department of Computer Science | XYZ University
+    </title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            background: #f5f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            background: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+
+        nav {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+
+            min-height: 75px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .logo {
+            color: #1d4ed8;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+
+        .logo span {
+            display: block;
+            color: #555;
+            font-size: 13px;
+            font-weight: normal;
+        }
+
+
+        .nav-links {
+            list-style: none;
+
+            display: flex;
+            gap: 25px;
+        }
+
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover {
+            color: #1d4ed8;
+        }
+
+
+        .menu-btn {
+            display: none;
+            border: none;
+            background: #1d4ed8;
+            color: white;
+            padding: 9px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 520px;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    rgba(15, 45, 100, 0.85),
+                    rgba(15, 45, 100, 0.85)
+                ),
+                url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+        }
+
+
+        .hero-content {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        .hero h1 {
+            font-size: 52px;
+            max-width: 750px;
+            margin-bottom: 20px;
+        }
+
+
+        .hero h1 span {
+            color: #93c5fd;
+        }
+
+
+        .hero p {
+            max-width: 700px;
+            font-size: 19px;
+            color: #e5e7eb;
+            margin-bottom: 30px;
+        }
+
+
+        .hero-btn {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+
+            padding: 13px 24px;
+            border-radius: 7px;
+
+            font-weight: bold;
+        }
+
+
+        .hero-btn:hover {
+            background: #1d4ed8;
+        }
+
+
+        /* ================= GENERAL ================= */
+
+        section {
+            padding: 80px 5%;
+        }
+
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #172554;
+            margin-bottom: 10px;
+        }
+
+
+        .section-title p {
+            color: #6b7280;
+        }
+
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: white;
+        }
+
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+
+        .about-image img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #1d4ed8;
+        }
+
+
+        .about-text p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+
+        .feature {
+            background: #eff6ff;
+            padding: 18px;
+            border-radius: 8px;
+        }
+
+
+        .feature strong {
+            color: #1d4ed8;
+        }
+
+
+        /* ================= PROGRAMS ================= */
+
+        .programs {
+            background: #f5f7fb;
+        }
+
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+
+        .program-card {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 12px;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.06);
+
+            transition: 0.3s;
+        }
+
+
+        .program-card:hover {
+            transform: translateY(-8px);
+            box-shadow:
+                0 12px 25px rgba(0,0,0,0.1);
+        }
+
+
+        .program-icon {
+            width: 65px;
+            height: 65px;
+            margin: 0 auto 18px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #dbeafe;
+            color: #1d4ed8;
+
+            border-radius: 50%;
+
+            font-size: 28px;
+        }
+
+
+        .program-card h3 {
+            margin-bottom: 8px;
+        }
+
+
+        .program-card p {
+            color: #777;
+            font-size: 14px;
+        }
+
+
+        /* ================= FACULTY ================= */
+
+        .faculty {
+            background: white;
+        }
+
+
+        .faculty-table {
+            width: 100%;
+            border-collapse: collapse;
+
+            background: white;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.06);
+
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+
+        .faculty-table th {
+            background: #1d4ed8;
+            color: white;
+            padding: 16px;
+            text-align: left;
+        }
+
+
+        .faculty-table td {
+            padding: 16px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+
+        .faculty-table tr:hover {
+            background: #eff6ff;
+        }
+
+
+        .faculty-name {
+            font-weight: bold;
+            color: #1d4ed8;
+        }
+
+
+        /* ================= NOTICE ================= */
+
+        .notice {
+            background: #f5f7fb;
+        }
+
+
+        .notice-box {
+            max-width: 900px;
+            margin: auto;
+
+            background: white;
+
+            padding: 30px;
+
+            border-left: 6px solid #1d4ed8;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.06);
+        }
+
+
+        .notice-item {
+            display: flex;
+            gap: 15px;
+
+            padding: 15px 0;
+
+            border-bottom: 1px solid #eee;
+        }
+
+
+        .notice-item:last-child {
+            border-bottom: none;
+        }
+
+
+        .notice-number {
+            min-width: 32px;
+            height: 32px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #dbeafe;
+            color: #1d4ed8;
+
+            border-radius: 50%;
+
+            font-weight: bold;
+        }
+
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background: white;
+        }
+
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+
+        .contact-info {
+            background: #eff6ff;
+            padding: 35px;
+            border-radius: 12px;
+        }
+
+
+        .contact-info h3 {
+            color: #1d4ed8;
+            margin-bottom: 20px;
+            font-size: 25px;
+        }
+
+
+        .contact-info p {
+            margin: 12px 0;
+        }
+
+
+        .contact-info a {
+            color: #1d4ed8;
+            text-decoration: none;
+        }
+
+
+        .contact-form {
+            padding: 30px;
+
+            background: #f8fafc;
+
+            border-radius: 12px;
+        }
+
+
+        .contact-form input,
+        .contact-form textarea {
+
+            width: 100%;
+
+            padding: 13px;
+
+            margin-bottom: 15px;
+
+            border: 1px solid #d1d5db;
+
+            border-radius: 7px;
+
+            outline: none;
+        }
+
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #2563eb;
+        }
+
+
+        .contact-form button {
+            width: 100%;
+
+            border: none;
+
+            background: #1d4ed8;
+            color: white;
+
+            padding: 13px;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+
+        .contact-form button:hover {
+            background: #1e40af;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #172554;
+            color: white;
+
+            text-align: center;
+
+            padding: 35px 20px;
+        }
+
+
+        footer h3 {
+            margin-bottom: 8px;
+        }
+
+
+        footer p {
+            color: #bfdbfe;
+        }
+
+
+        /* ================= TOAST ================= */
+
+        .toast {
+            position: fixed;
+
+            bottom: 25px;
+            right: 25px;
+
+            background: #111827;
+            color: white;
+
+            padding: 14px 20px;
+
+            border-radius: 7px;
+
+            display: none;
+
+            z-index: 5000;
+        }
+
+
+        .toast.show {
+            display: block;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .program-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            nav {
+                position: relative;
+            }
+
+
+            .menu-btn {
+                display: block;
+            }
+
+
+            .nav-links {
+                display: none;
+
+                position: absolute;
+
+                top: 70px;
+                left: 0;
+
+                width: 100%;
+
+                background: white;
+
+                flex-direction: column;
+
+                padding: 20px;
+
+                box-shadow:
+                    0 5px 15px rgba(0,0,0,0.1);
+            }
+
+
+            .nav-links.active {
+                display: flex;
+            }
+
+
+            .program-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+
+            .faculty-table {
+                font-size: 13px;
+            }
+
+
+            .faculty-table th,
+            .faculty-table td {
+                padding: 10px;
+            }
+
+
+            .hero {
+                min-height: 500px;
+            }
+
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+
+            .hero p {
+                font-size: 16px;
+            }
+
+        }
+
+
+        @media (max-width: 480px) {
+
+            .faculty-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+
+            section {
+                padding: 60px 5%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+
+                XYZ University
+
+                <span>
+                    Department of Computer Science
+                </span>
+
+            </div>
+
+
+            <button
+                class="menu-btn"
+                onclick="toggleMenu()"
+            >
+                ☰
+            </button>
+
+
+            <ul
+                class="nav-links"
+                id="navLinks"
+            >
+
+                <li>
+                    <a href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about">
+                        About Department
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#faculty">
+                        Faculty
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#courses">
+                        Courses
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section
+        class="hero"
+        id="home"
+    >
+
+        <div class="hero-content">
+
+            <h1>
+
+                Department of
+                <span>
+                    Computer Science
+                </span>
+
+            </h1>
+
+
+            <p>
+
+                The Department of Computer Science provides
+                quality education and develops technical and
+                problem-solving skills among students.
+
+            </p>
+
+
+            <a
+                href="#courses"
+                class="hero-btn"
+            >
+                Explore Programs
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section
+        class="about"
+        id="about"
+    >
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    About Our Department
+                </h2>
+
+                <p>
+                    Excellence in computer science education
+                </p>
+
+            </div>
+
+
+            <div class="about-content">
+
+
+                <div class="about-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80"
+                        alt="Computer Science Students"
+                    >
+
+                </div>
+
+
+                <div class="about-text">
+
+                    <h3>
+                        Building Future Technology Leaders
+                    </h3>
+
+
+                    <p>
+
+                        The Department of Computer Science at
+                        XYZ University is committed to providing
+                        quality education and creating an
+                        environment where students can develop
+                        technical and problem-solving skills.
+
+                    </p>
+
+
+                    <div class="features">
+
+                        <div class="feature">
+                            💻
+                            <strong>
+                                Modern Technology
+                            </strong>
+                        </div>
+
+                        <div class="feature">
+                            🎓
+                            <strong>
+                                Quality Education
+                            </strong>
+                        </div>
+
+                        <div class="feature">
+                            🔬
+                            <strong>
+                                Research
+                            </strong>
+                        </div>
+
+                        <div class="feature">
+                            🚀
+                            <strong>
+                                Career Growth
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROGRAMS ================= -->
+
+    <section
+        class="programs"
+        id="courses"
+    >
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Programs Offered
+                </h2>
+
+                <p>
+                    Choose the program that matches your goals
+                </p>
+
+            </div>
+
+
+            <div class="program-grid">
+
+
+                <div class="program-card">
+
+                    <div class="program-icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        BCA
+                    </h3>
+
+                    <p>
+                        Bachelor of Computer Applications
+                    </p>
+
+                </div>
+
+
+                <div class="program-card">
+
+                    <div class="program-icon">
+                        🖥️
+                    </div>
+
+                    <h3>
+                        MCA
+                    </h3>
+
+                    <p>
+                        Master of Computer Applications
+                    </p>
+
+                </div>
+
+
+                <div class="program-card">
+
+                    <div class="program-icon">
+                        ⚙️
+                    </div>
+
+                    <h3>
+                        B.Tech Computer Science
+                    </h3>
+
+                    <p>
+                        Undergraduate engineering program
+                    </p>
+
+                </div>
+
+
+                <div class="program-card">
+
+                    <div class="program-icon">
+                        🧠
+                    </div>
+
+                    <h3>
+                        M.Tech Computer Science
+                    </h3>
+
+                    <p>
+                        Advanced postgraduate program
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FACULTY ================= -->
+
+    <section
+        class="faculty"
+        id="faculty"
+    >
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Faculty Members
+                </h2>
+
+                <p>
+                    Meet our experienced faculty
+                </p>
+
+            </div>
+
+
+            <table class="faculty-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Name
+                        </th>
+
+                        <th>
+                            Designation
+                        </th>
+
+                        <th>
+                            Specialization
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <td class="faculty-name">
+                            Dr. Amit Sharma
+                        </td>
+
+                        <td>
+                            Professor
+                        </td>
+
+                        <td>
+                            Artificial Intelligence
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td class="faculty-name">
+                            Dr. Neha Verma
+                        </td>
+
+                        <td>
+                            Associate Professor
+                        </td>
+
+                        <td>
+                            Data Science
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td class="faculty-name">
+                            Mr. Rahul Singh
+                        </td>
+
+                        <td>
+                            Assistant Professor
+                        </td>
+
+                        <td>
+                            Computer Networks
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= NOTICE ================= -->
+
+    <section
+        class="notice"
+        id="notice"
+    >
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Important Notice
+                </h2>
+
+                <p>
+                    Latest department announcements
+                </p>
+
+            </div>
+
+
+            <div class="notice-box">
+
+
+                <div class="notice-item">
+
+                    <span class="notice-number">
+                        1
+                    </span>
+
+                    <p>
+                        Mid-term examinations will begin
+                        from 15 September.
+                    </p>
+
+                </div>
+
+
+                <div class="notice-item">
+
+                    <span class="notice-number">
+                        2
+                    </span>
+
+                    <p>
+                        Students must submit their
+                        assignments before the deadline.
+                    </p>
+
+                </div>
+
+
+                <div class="notice-item">
+
+                    <span class="notice-number">
+                        3
+                    </span>
+
+                    <p>
+                        Registration for the seminar
+                        is now open.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section
+        class="contact"
+        id="contact"
+    >
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Contact Us
+                </h2>
+
+                <p>
+                    Get in touch with the Department
+                </p>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+
+                <div class="contact-info">
+
+                    <h3>
+                        Department Information
+                    </h3>
+
+
+                    <p>
+                        🏫
+                        <strong>
+                            Department:
+                        </strong>
+                        Computer Science
+                    </p>
+
+
+                    <p>
+                        🎓
+                        <strong>
+                            University:
+                        </strong>
+                        XYZ University
+                    </p>
+
+
+                    <p>
+                        📍
+                        <strong>
+                            Address:
+                        </strong>
+                        Jaipur, Rajasthan
+                    </p>
+
+
+                    <p>
+                        📧
+                        <strong>
+                            Email:
+                        </strong>
+                        <a href="mailto:cs@xyzuniversity.edu">
+                            cs@xyzuniversity.edu
+                        </a>
+                    </p>
+
+                </div>
+
+
+                <form
+                    class="contact-form"
+                    onsubmit="submitForm(event)"
+                >
+
+                    <input
+                        type="text"
+                        placeholder="Your Name"
+                        required
+                    >
+
+
+                    <input
+                        type="email"
+                        placeholder="Your Email"
+                        required
+                    >
+
+
+                    <input
+                        type="text"
+                        placeholder="Subject"
+                        required
+                    >
+
+
+                    <textarea
+                        rows="5"
+                        placeholder="Your Message"
+                        required
+                    ></textarea>
+
+
+                    <button type="submit">
+                        Send Message
+                    </button>
+
+                </form>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h3>
+            Department of Computer Science
+        </h3>
+
+        <p>
+            XYZ University | Jaipur, Rajasthan
+        </p>
+
+        <br>
+
+        <p>
+            © 2026 XYZ University
+        </p>
+
+    </footer>
+
+
+    <!-- Toast -->
+
+    <div
+        class="toast"
+        id="toast"
+    ></div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+
+        /* Mobile Menu */
+
+        function toggleMenu() {
+
+            document
+                .getElementById("navLinks")
+                .classList.toggle("active");
+
+        }
+
+
+        /* Close mobile menu after clicking */
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        document
+                            .getElementById("navLinks")
+                            .classList.remove("active");
+
+                    }
+                );
+
+            });
+
+
+        /* Contact Form */
+
+        function submitForm(event) {
+
+            event.preventDefault();
+
+            showToast(
+                "Thank you! Your message has been submitted."
+            );
+
+            event.target.reset();
+
+        }
+
+
+        /* Toast */
+
+        function showToast(message) {
+
+            const toast =
+                document.getElementById("toast");
+
+            toast.textContent = message;
+
+            toast.classList.add("show");
+
+
+            setTimeout(() => {
+
+                toast.classList.remove("show");
+
+            }, 3000);
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
