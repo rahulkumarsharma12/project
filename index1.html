@@ -1,0 +1,273 @@
+```html
+<!-- Admission Form -->
+<section class="admission-form" id="application">
+    <h2 class="section-title">College Admission Form</h2>
+
+    <form id="admissionForm">
+
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your full name"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Mobile Number</label>
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter your mobile number"
+                pattern="[0-9]{10}"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input
+                type="date"
+                id="dob"
+                name="dob"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label>Gender</label>
+
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="gender" value="Male" required>
+                    Male
+                </label>
+
+                <label>
+                    <input type="radio" name="gender" value="Female">
+                    Female
+                </label>
+
+                <label>
+                    <input type="radio" name="gender" value="Other">
+                    Other
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="course">Select Course</label>
+
+            <select id="course" name="course" required>
+                <option value="">-- Select Course --</option>
+                <option value="BCA">BCA</option>
+                <option value="MCA">MCA</option>
+                <option value="B.Tech">B.Tech Computer Science</option>
+                <option value="M.Tech">M.Tech Computer Science</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="qualification">Highest Qualification</label>
+
+            <input
+                type="text"
+                id="qualification"
+                name="qualification"
+                placeholder="e.g. 12th, BCA, B.Tech"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address</label>
+
+            <textarea
+                id="address"
+                name="address"
+                rows="4"
+                placeholder="Enter your address"
+                required
+            ></textarea>
+        </div>
+
+        <div class="form-group checkbox-group">
+            <label>
+                <input
+                    type="checkbox"
+                    id="declaration"
+                    required
+                >
+                I confirm that the information provided is correct.
+            </label>
+        </div>
+
+        <button type="submit" class="submit-btn">
+            Submit Application
+        </button>
+
+        <button type="reset" class="reset-btn">
+            Reset
+        </button>
+
+        <p id="formMessage"></p>
+
+    </form>
+</section>
+
+
+<style>
+    .admission-form {
+        background: #f5f7fb;
+        padding: 70px 8%;
+    }
+
+    .admission-form form {
+        max-width: 700px;
+        margin: auto;
+        background: white;
+        padding: 35px;
+        border-radius: 12px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #003b73;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 15px;
+        outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+        border-color: #0074b7;
+        box-shadow: 0 0 5px rgba(0, 116, 183, 0.2);
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    .radio-group {
+        display: flex;
+        gap: 25px;
+    }
+
+    .radio-group label {
+        font-weight: normal;
+        color: #333;
+    }
+
+    .radio-group input {
+        width: auto;
+        margin-right: 5px;
+    }
+
+    .checkbox-group label {
+        color: #333;
+        font-weight: normal;
+    }
+
+    .checkbox-group input {
+        width: auto;
+        margin-right: 8px;
+    }
+
+    .submit-btn,
+    .reset-btn {
+        padding: 12px 25px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .submit-btn {
+        background: #0074b7;
+        color: white;
+    }
+
+    .submit-btn:hover {
+        background: #003b73;
+    }
+
+    .reset-btn {
+        background: #ddd;
+        color: #222;
+    }
+
+    .reset-btn:hover {
+        background: #bbb;
+    }
+
+    #formMessage {
+        margin-top: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    @media (max-width: 600px) {
+        .admission-form form {
+            padding: 20px;
+        }
+
+        .radio-group {
+            flex-direction: column;
+            gap: 8px;
+        }
+    }
+</style>
+
+
+<script>
+    const admissionForm = document.getElementById("admissionForm");
+    const formMessage = document.getElementById("formMessage");
+
+    admissionForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+
+        formMessage.textContent =
+            "Thank you, " + name +
+            "! Your admission application has been submitted successfully.";
+
+        formMessage.style.color = "green";
+
+        admissionForm.reset();
+    });
+</script>
+```
